@@ -1,0 +1,31 @@
+@WebApi_HostAddress = http://localhost:5271
+@TemplateId = 6e86bf99-36c0-4e53-abfc-8a51b5a3ea4a
+
+### - Get all Templates
+GET {{WebApi_HostAddress}}/Templates
+Accept: application/json
+
+### - Get Template by Id
+GET {{WebApi_HostAddress}}/Templates/{{TemplateId}}
+
+### - Create a new Template
+POST {{WebApi_HostAddress}}/Templates
+Content-Type: application/json
+
+{
+  "Name": "Sample Template",
+  "Description": "A description for the sample template"
+}
+
+### - Update an existing Template
+PUT {{WebApi_HostAddress}}/Templates/{{TemplateId}}
+Content-Type: application/json
+{
+  "Id": "{{TemplateId}}",
+  "Name": "Updated Sample Template",
+  "Description": "An updated description for the sample template"
+}
+
+### - Delete a Template
+DELETE {{WebApi_HostAddress}}/Templates/{{TemplateId}}
+Accept: application/json

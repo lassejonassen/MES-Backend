@@ -1,0 +1,42 @@
+@WebApi_HostAddress = http://localhost:5271
+@BaseUrl = {{WebApi_HostAddress}}/TemplateProperties
+@TemplateId = 29a68da1-a6e1-4be9-bb39-90d967af3075
+@TemplatePropertyId = f9ab07ff-a1d7-4358-912e-9a159cc13716
+
+### - Get All Template Properties
+GET {{baseUrl}}?templateId={{TemplateId}}
+Accept: application/json
+
+### - Get Template Property by Id
+GET {{baseUrl}}/{{TemplatePropertyId}}
+
+### - Create a Template Property
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+    "TemplateId": "{{TemplateId}}",
+    "Name": "Sample Template",
+    "Type": "String",
+    "Description": "Some property",
+    "IsRequired": true,
+    "DefaultValue": "Some defualt value",
+    "IsReadOnly": true
+}
+
+### - Update a Template Property
+PUT {{baseUrl}}/{{TemplatePropertyId}}
+Content-Type: application/json
+{
+    "Id": "{{TemplatePropertyId}}",
+    "Name": "Sample Template updated",
+    "Type": "String",
+    "Description": "Some property",
+    "IsRequired": true,
+    "DefaultValue": "Some defualt value",
+    "IsReadOnly": true
+}
+
+### - Delete a Template Property
+DELETE {{baseUrl}}/{{TemplatePropertyId}}
+Accept: application/json
